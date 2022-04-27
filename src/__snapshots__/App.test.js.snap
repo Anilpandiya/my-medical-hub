@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="dashboard"
+>
+  My Medical HUB
+  <div>
+    <button
+      className=" mbsc-reset mbsc-font mbsc-button mbsc-ios mbsc-ltr mbsc-button-outline mbsc-button-primary"
+      onClick={[Function]}
+    >
+      Doctor
+    </button>
+    <button
+      className=" mbsc-reset mbsc-font mbsc-button mbsc-ios mbsc-ltr mbsc-button-outline mbsc-button-primary"
+      onClick={[Function]}
+    >
+      Patient
+    </button>
+  </div>
+</div>
+`;

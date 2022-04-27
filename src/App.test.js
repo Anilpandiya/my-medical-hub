@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders My Medical HUB text', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/My Medical HUB/i));
+});
+
+test('renders buttons for Doctor & Patient', () => {
+  render(<App />);
+  expect(screen.getAllByRole('button'));
 });
