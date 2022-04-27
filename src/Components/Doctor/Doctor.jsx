@@ -20,6 +20,7 @@ import {
   colorPopup,
   colors,
 } from "../../Constants/Schedule";
+import './Doctor.scss';
 
 setOptions({
   theme: "ios",
@@ -45,6 +46,7 @@ function Doctor() {
   const [selectedColor, setSelectedColor] = React.useState("");
   const [tempColor, setTempColor] = React.useState("");
   const colorPicker = React.useRef();
+  
   const colorButtons = React.useMemo(() => {
     return [
       "cancel",
@@ -223,7 +225,7 @@ function Doctor() {
 
   // popup options
   const headerText = React.useMemo(
-    () => (isEdit ? "Edit event" : "New Event"),
+    () => (isEdit ? "Edit appointment" : "New Appointment"),
     [isEdit]
   );
   const popupButtons = React.useMemo(() => {
