@@ -8,8 +8,8 @@ import {
   formatDate,
   toast,
 } from "@mobiscroll/react";
-import doctors from '../../Constants/Doctors';
-import defaultAppointments from '../../Constants/DefaultAppointments';
+import doctors from "../../Constants/Doctors";
+import defaultAppointments from "../../Constants/DefaultAppointments";
 import "./Patient.scss";
 
 setOptions({
@@ -130,81 +130,87 @@ function Patient() {
 
   return (
     <div>
-      <Eventcalendar
-        view={view}
-        resources={doctors}
-        data={appointments}
-        clickToCreate={false}
-        dragToCreate={false}
-        showEventTooltip={false}
-        onEventHoverIn={onEventHoverIn}
-        onEventHoverOut={onEventHoverOut}
-        onEventClick={onEventClick}
-      />
-      <Popup
-        display="anchored"
-        isOpen={isOpen}
-        anchor={anchor}
-        touchUi={false}
-        showOverlay={false}
-        contentPadding={false}
-        closeOnOverlayClick={false}
-        width={350}
-        cssClass="md-tooltip"
-      >
-        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <div
-            className="md-tooltip-header"
-            style={{ backgroundColor: bgColor }}
-          >
-            <span className="md-tooltip-name-age">{info}</span>
-            <span className="md-tooltip-time">{time}</span>
-          </div>
-          <div className="md-tooltip-info">
-            <div className="md-tooltip-title">
-              Status:{" "}
-              <span className="md-tooltip-status md-tooltip-text">
-                {status}
-              </span>
+        <div className='portal-header'>
+            Appointment Portal - Pateint
+            <p className='placeholder'>check the scheduled appointments.</p>
+        </div>
+      <div>
+        <Eventcalendar
+          view={view}
+          resources={doctors}
+          data={appointments}
+          clickToCreate={false}
+          dragToCreate={false}
+          showEventTooltip={false}
+          onEventHoverIn={onEventHoverIn}
+          onEventHoverOut={onEventHoverOut}
+          onEventClick={onEventClick}
+        />
+        <Popup
+          display="anchored"
+          isOpen={isOpen}
+          anchor={anchor}
+          touchUi={false}
+          showOverlay={false}
+          contentPadding={false}
+          closeOnOverlayClick={false}
+          width={350}
+          cssClass="md-tooltip"
+        >
+          <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <div
+              className="md-tooltip-header"
+              style={{ backgroundColor: bgColor }}
+            >
+              <span className="md-tooltip-name-age">{info}</span>
+              <span className="md-tooltip-time">{time}</span>
+            </div>
+            <div className="md-tooltip-info">
+              <div className="md-tooltip-title">
+                Status:{" "}
+                <span className="md-tooltip-status md-tooltip-text">
+                  {status}
+                </span>
+                <Button
+                  color={buttonType}
+                  variant="outline"
+                  className="md-tooltip-status-button"
+                  onClick={setStatusButton}
+                >
+                  {buttonText}
+                </Button>
+              </div>
+              <div className="md-tooltip-title">
+                Reason for visit:{" "}
+                <span className="md-tooltip-reason md-tooltip-text">
+                  {reason}
+                </span>
+              </div>
+              <div className="md-tooltip-title">
+                Location:{" "}
+                <span className="md-tooltip-location md-tooltip-text">
+                  {location}
+                </span>
+              </div>
               <Button
-                color={buttonType}
-                variant="outline"
-                className="md-tooltip-status-button"
-                onClick={setStatusButton}
+                color="secondary"
+                className="md-tooltip-view-button"
+                onClick={viewFile}
               >
-                {buttonText}
+                View patient file
+              </Button>
+              <Button
+                color="danger"
+                variant="outline"
+                className="md-tooltip-delete-button"
+                onClick={deleteApp}
+              >
+                Delete appointment
               </Button>
             </div>
-            <div className="md-tooltip-title">
-              Reason for visit:{" "}
-              <span className="md-tooltip-reason md-tooltip-text">
-                {reason}
-              </span>
-            </div>
-            <div className="md-tooltip-title">
-              Location:{" "}
-              <span className="md-tooltip-location md-tooltip-text">
-                {location}
-              </span>
-            </div>
-            <Button
-              color="secondary"
-              className="md-tooltip-view-button"
-              onClick={viewFile}
-            >
-              View patient file
-            </Button>
-            <Button
-              color="danger"
-              variant="outline"
-              className="md-tooltip-delete-button"
-              onClick={deleteApp}
-            >
-              Delete appointment
-            </Button>
           </div>
-        </div>
-      </Popup>
+        </Popup>
+      </div>
     </div>
   );
 }

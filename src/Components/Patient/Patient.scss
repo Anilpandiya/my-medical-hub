@@ -1,3 +1,15 @@
+.portal-header {
+  background-color: #282c34;
+  height: 80px;
+  padding:20px 0;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+}
+
+.placeholder {
+  font-size: calc(.1px + 2vmin);
+}
 .md-tooltip .mbsc-popup-content {
   padding: 0;
 }
