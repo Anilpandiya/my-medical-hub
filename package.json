@@ -5,7 +5,9 @@
   "dependencies": {
     "@mobiscroll/cli": "^1.7.0",
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.16.0.tgz",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.1.1",
     "cra-template": "1.2.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
